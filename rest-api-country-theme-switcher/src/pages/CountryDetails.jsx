@@ -91,7 +91,7 @@ function CountryDetails() {
       <div className="container mx-auto mb-16 px-4">
         <button
           onClick={() => navigate(-1)}
-          className="px-8 py-2 shadow-md rounded-lg dark:bg-gray-700 bg-gray-200 text-black dark:text-white"
+          className="px-8 py-2 shadow-md rounded-lg"
         >
           ← Back
         </button>
@@ -149,16 +149,14 @@ function CountryDetails() {
                   <button
                     key={borderName}
                     onClick={() => navigate(`/country/${borderName}`)}
-                    className="px-4 py-1 shadow rounded-md text-sm bg-gray-100 dark:bg-gray-700 dark:text-white hover:bg-gray-200 dark:hover:bg-gray-600 transition"
+                    className="px-4 py-1 shadow rounded-md text-sm"
                   >
                     {borderName}
                   </button>
                 ))}
               </div>
             ) : (
-              <span className="ml-2 text-gray-600 dark:text-gray-300">
-                None
-              </span>
+              <span className="ml-2">None</span>
             )}
           </div>
         </div>
