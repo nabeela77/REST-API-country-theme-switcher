@@ -17,16 +17,16 @@ vi.mock("../components/CountryCard", () => ({
 // ✅ Mock Country data
 const mockCountries = [
   {
-    name: { common: "Germany" },
-    region: "Europe",
-    population: 83000000,
-    capital: ["Berlin"],
-    flags: { png: "germany.png" },
+    name: { common: "Botswana" },
+    region: "Africa",
+    population: 2351625,
+    capital: ["Gaborone"],
+    flags: { png: "botswana.png" },
   },
   {
     name: { common: "Brazil" },
     region: "Americas",
-    population: 211000000,
+    population: 212559409,
     capital: ["Brasília"],
     flags: { png: "brazil.png" },
   },
@@ -88,7 +88,7 @@ describe("Home component", () => {
     );
 
     await waitFor(() => {
-      expect(screen.getByText("Germany")).toBeInTheDocument();
+      expect(screen.getByText("Botswana")).toBeInTheDocument();
       expect(screen.getByText("Brazil")).toBeInTheDocument();
     });
   });
@@ -100,13 +100,13 @@ describe("Home component", () => {
       </MemoryRouter>
     );
 
-    await screen.findByText("Germany");
+    await screen.findByText("Botswana");
 
     fireEvent.change(screen.getByLabelText(/Search for a country/i), {
       target: { value: "Brazil" },
     });
 
-    expect(screen.queryByText("Germany")).not.toBeInTheDocument();
+    expect(screen.queryByText("Botswana")).not.toBeInTheDocument();
     expect(screen.getByText("Brazil")).toBeInTheDocument();
   });
 
